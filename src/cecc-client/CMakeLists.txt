@@ -35,9 +35,6 @@ if (NOT WIN32)
   endif()
 else()
   add_definitions(-DTARGET_WINDOWS -DNOMINMAX -D_CRT_SECURE_NO_WARNINGS -D_WINSOCKAPI_)
-  if (NOT ${WIN64})
-    add_definitions(-D_USE_32BIT_TIME_T)
-  endif()
 endif()
 
 include_directories(${p8-platform_INCLUDE_DIRS}

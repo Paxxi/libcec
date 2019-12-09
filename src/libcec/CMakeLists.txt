@@ -181,7 +181,11 @@ install(FILES ${PROJECT_SOURCE_DIR}/../../include/cec.h
 # libCEC target
 add_library(cec SHARED ${CEC_SOURCES})
 install(TARGETS cec
-        DESTINATION ${LIB_DESTINATION})
+  RUNTIME DESTINATION bin
+  ARCHIVE DESTINATION lib
+  LIBRARY DESTINATION lib
+)
+install(FILES $<TARGET_PDB_FILE:cec> DESTINATION lib)
 set_target_properties(cec PROPERTIES VERSION   ${LIBCEC_VERSION_MAJOR}.${LIBCEC_VERSION_MINOR}.${LIBCEC_VERSION_PATCH}
                                      SOVERSION ${LIBCEC_VERSION_MAJOR})
 target_link_libraries(cec ${p8-platform_LIBRARIES})
