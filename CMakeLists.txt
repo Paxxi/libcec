@@ -14,7 +14,7 @@ set(LIBCEC_VERSION_PATCH 4)
 #add_dependencies(cecc-client cec)
 
 # pyCecClient
-add_subdirectory(src/pyCecClient)
+# add_subdirectory(src/pyCecClient)
 
 # libCEC
 add_subdirectory(src/libcec)
